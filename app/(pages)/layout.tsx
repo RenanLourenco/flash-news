@@ -1,5 +1,5 @@
 import { Nav } from "../components/Nav/Nav";
-import "./globals.css";
+
 
 export default function RootLayout({
   children,
@@ -7,13 +7,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="flex p-8">
-        <Nav />
-        <div className="px-8 mt-16">
-          {children}
-        </div>
-        </body>
-    </html>
+    <div className="flex p-8 ">
+      <Nav />
+      <div className="mt-16 pl-8">{children}</div>
+      
+    </div>
   );
 }

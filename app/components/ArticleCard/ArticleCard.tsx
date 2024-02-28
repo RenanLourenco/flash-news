@@ -1,11 +1,16 @@
+
+
 import { Article } from "@/app/types/article-types";
 import Image from "next/image";
 import Link from "next/link";
 import defaultNewsPng from "@/public/default-news.png"
 import { CATEGORIES_ITEMS } from "../Nav/constant";
+import { ImageWillFallBack } from "../ImageWillFallback/ImageWithFallback";
 
 export function ArticleCard( p: { article: Article }){
-    return <Link href='#' className=" space-y-4 block w-80 hover:bg-slate-50 transition transform hover:scale-105 border-2 border-gray-100 py-4 pb-4 px-6 rounded-xl shadow-sm">
+
+
+    return <Link href={ `/articles/title/${p.article.title}` } className=" space-y-4 block w-80 hover:bg-slate-50 transition transform hover:scale-105 border-2 border-gray-100 py-4 pb-4 px-6 rounded-xl shadow-sm">
         {/* Header */}
         <div className="capitalize">
             {/* Icon and category */}
@@ -24,7 +29,7 @@ export function ArticleCard( p: { article: Article }){
             {/* Title */}
             <div className="font-semibold text-xl line-clamp-2 h-14">{p.article.title}</div>
             {/* Article Image */}
-            <Image className="h-40" height={200} width={300} src={p.article.image_url || defaultNewsPng} alt="Image for article"/>
+            <ImageWillFallBack className="h-40 rounded-lg" height={200} width={300} src={p.article.image_url || defaultNewsPng} fallback={defaultNewsPng} alt="Image for article" />
         </div>
     </Link>
 }
