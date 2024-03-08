@@ -11,8 +11,8 @@ export function Nav(){
                 <Image src={logoPng} alt="logo" className="w-40"/>
             </Link>
             <nav className="space-y-4 mt-4">
-                {NAV_ITEMS.map((navItem) => (
-                    <NavItem {...navItem}></NavItem>
+                {NAV_ITEMS.map((navItem,i) => (
+                    <NavItem key={i}  {...navItem}></NavItem>
                 ))}
             </nav>
         </div>

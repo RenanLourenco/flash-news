@@ -1,6 +1,7 @@
 import Clock from "../components/Clock/Clock";
 import { Nav } from "../components/Nav/Nav";
 import dynamic from "next/dynamic";
+import 'react-loading-skeleton/dist/skeleton.css'
 const ClockNoSRR = dynamic(() => import("@/app/components/Clock/Clock"), {
   ssr: false
 })

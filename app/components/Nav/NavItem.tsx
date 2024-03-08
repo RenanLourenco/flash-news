@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { ArticleCategory } from "@/app/types/article-types";
 
 export function NavItem(p: {
-    category: ArticleCategory, 
+    category: ArticleCategory | string, 
     alt: string, 
     src: StaticImageData
 }) {

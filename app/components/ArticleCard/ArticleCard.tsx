@@ -29,7 +29,7 @@ export function ArticleCard( p: { article: Article }){
             {/* Title */}
             <div className="font-semibold text-xl line-clamp-2 h-14">{p.article.title}</div>
             {/* Article Image */}
-            <ImageWillFallBack className="h-40 rounded-lg" height={200} width={300} src={p.article.image_url || defaultNewsPng} fallback={defaultNewsPng} alt="Image for article" />
+            <ImageWillFallBack className="rounded-lg" height={200} width={300} src={p.article.image_url || defaultNewsPng} fallback={defaultNewsPng} alt="Image for article" />
         </div>
     </Link>
 }
